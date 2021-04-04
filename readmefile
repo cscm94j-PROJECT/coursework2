@@ -1,0 +1,83 @@
+GETTING STARTED WITH GIT AND GITHUB
+
+// 1. Installation: (If you are using a windows machine, you can like to download “commander”. [Commander is a git oriented command line interface that has git pre-loaded in it. This means that downloading and installing commander is synonymous to installing git ].
+
+// 2. Setup a git profile up on your computer: Setting up a git git profile is adding your name and email to your git such that when changes are made on your computer, git keeps track of who is making what changes. 
+
+//git config --global user.name samuel
+//git config --global user.email samuel@gmail.com
+
+// the above commands creates your git profile and can be displayed by 
+// git config user.name 
+// git config user.email
+//.......................................
+
+// setting up a git repository. 
+//Repository is a container for a project which can be created locally or remotely. Essentially, git is the contents of this project for us as it is a folder that contains a .git file.
+//...........................................
+
+// creating a repository
+// Navigate to the project directory you wish to make a repo and then run the following command. 
+// git init 
+// this creates a .git file in the directory and thus becoming a repository. 
+//please note that our project directory doesn’t have to be empty before making it a repo. 
+//A content filled directory can also be made a repo. 
+//................................................
+
+//So, basically, the idea of git is to help keep track of changes made in our project and //that is done with the support of a git function called commit
+
+// commit is the final stage of file manipulation and the stage that keeps track notable //changes in our project. However, there are other 2 stages which the file 
+//must pass through before being committed. These are 
+// modified stage and 
+//staging stage.
+// modified stage is almost non important as it is the stage when there is an alteration to
+//the project. 
+// whenever there is a modification to our program, it already satisfied the modified stage. 
+//every modified stage must be added to the staging stage before it is finally committed 
+//you can run the following code to see which files are available for staging 
+// git status
+// the above code shows all the modified files 
+//The following code adds the modified files to the staging stage 
+// git add code.java 
+// code.java is the name of the file to be added to the staging stage
+//if you mistakenly added the wrong file to the staging stage, it can be removed by //running the following code
+//git rm --cached code.java
+// when the files have been added to the staging stage, they are now ready to be //committed 
+//.............................
+
+// committing your code 
+// to commit your code, use the following command
+// git commit -m “descriptive message”
+//to see commit history, run the following command 
+// git log
+//this gives a full detail of the commit history.
+//to see the summary of the commit history, run the following code
+// git log --oneline 
+// this give the summary and the most useful information about the commit history. 
+
+//.......................
+
+//undoing stuffs
+// It is possible to undo commit with 3 methods 
+//1. checkout:it helps to go back in time as safe to use without any issue
+//2. revert: it helps to undo some changes in file after it has been committed 
+//3. reset: permanently take you back to a particular commit as well as deleting them.
+//.............................
+
+//Branching 
+//Master branch is the stable of the project you are building and also the powerhouse of //your program. When working in team, total care must be taken to not override the //master branch
+// to make a branch, run the following command
+// git branch samuelbranch 
+// this creates a new branch called samuelbranch
+//to check all the branches existing, run the following code
+//git branch -a
+// to delete a branch, run the following code
+//git branch -D samuelbranch
+//everytime a new branch is created, it must be checked out to start working with it 
+//..........................
+
+//Merging branches and dealing with conflicts 
+//to merge, we have to be on the branch we want to merge into. This means that if we are //merging into the master branch, we must check out the master branch
+//Having being on the branch to merge into, run the following command
+// git merge samuelbranch
+
